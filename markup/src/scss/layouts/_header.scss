@@ -1,0 +1,154 @@
+#header {
+	@include animate(background padding border-color);
+
+	padding: 20px 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 9999;
+
+	&.fixed-position {
+		background: rgba(14, 58, 116, .8);
+		backdrop-filter: blur(10px);
+		// border-color: $light-blue;
+		padding: 10px 0;
+	}
+
+	.columns-block {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0 10px;
+	}
+
+	#nav-bar {
+
+		&.nav-active {
+
+			.nav-opener {
+
+				&:before {
+					background: $white;
+					transform: translate(0, 10px) rotate(-135deg);
+					width: 30px;
+				}
+
+				span {
+					background: $white;
+					width: 0;
+				}
+
+				&:after {
+					background: $white;
+					transform: translate(0, -10px) rotate(135deg);
+					width: 30px;
+				}
+			}
+			
+			.nav-drop {
+
+				@include media ('<tablet') { 
+					background: $white;
+					inset-inline: 0;
+					opacity: 1;
+					transition: opacity .3s 0s, inset 0s 0s;
+				}
+			}
+		}
+
+		.nav-opener {
+			@include animate(background border-color);
+			@include size(34px);
+
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 8px 0;
+			text-indent: -9999px;
+			overflow: hidden;
+			z-index: 9999;
+			float: right;
+
+			@include media ('>=tablet') {
+				display: none;
+			}
+
+			&:before,
+			&:after,
+			& span {
+				@include animate(background width transform);
+
+				content: '';
+				background: $black;
+				width: 100%;
+				height: 2px;
+			}
+		}
+
+		.nav-drop {
+			z-index: 99;
+
+			@include media ('<tablet') { 
+				display: block;
+				position: absolute;
+				inset: var(--_header-height) 100% calc(-100vh + var(--_header-height)) -100%;
+				background: var(--white);
+				padding: var(--_header-padding);
+				overflow-x: hidden;
+				overflow-y: auto;
+				opacity: 0;
+				transition: opacity .3s 0s, inset 0s 0s;
+			}
+
+			@include media ('>=tablet') {
+				display: flex;
+			}
+		}
+	}
+
+	.menu-list {
+		@extend %listreset;
+
+		text-align: center;
+
+		/* desktop */
+		@include media ('>=tablet') {
+			display: inline-flex;
+			align-items: center;
+			gap: 0 10px;
+			border-radius: 30px;
+			text-align: left;
+		}
+
+		@include media ('>=widescreen') {
+			gap: 0 45px;
+		}
+
+		li {
+			margin: 0 0 30px;
+			position: relative;
+
+			@include media ('>=tablet') {
+				margin: 0;
+			}
+		}
+
+		a {
+			display: inline-block;
+			padding: 10px;
+			font-size: 14px;
+			line-height: 1;
+			text-decoration: none;
+			text-transform: uppercase;
+			position: relative;
+			color: $white;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
