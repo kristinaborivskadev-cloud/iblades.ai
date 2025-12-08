@@ -13,7 +13,7 @@ $secondary-sans-serif: 'Inter', 'Arial', 'Helvetica', sans-serif;
 $font-serif:	  'Times New Roman', 'Times', serif;
 
 // Body styles
-$body-background-color: $white;
+$body-background-color: $light-gray;
 $body-text-weight:		400;
 $body-font-size: 		16px;
 $body-line-height:		1.5;
@@ -33,29 +33,32 @@ $headings-font-weight: 700;
 $headings-font-family: $secondary-sans-serif;
 $headings-color:	   inherit;
 	//h1
-	$h1-fs-phone:   30px;
-	$h1-fs-tablet:  35px;
-	$h1-fs-desktop: 40px;
+	$h1-fs-xs-phone:   40px;
+	$h1-fs-phone:   44px;
+	$h1-fs-tablet:  50px;
+	$h1-fs-widescreen: 60px;
+	$h1-fs-ls-widescreen: 80px;
 	//h2
-	$h2-fs-phone:   25px;
-	$h2-fs-tablet:  30px;
-	$h2-fs-desktop: 35px;
+	$h2-fs-xs-phone:   40px;
+	$h2-fs-phone:   40px;
+	$h2-fs-widescreen: 58px;
+	$h2-fs-ls-widescreen: 80px;
 	//h3
 	$h3-fs-phone:   23px;
 	$h3-fs-tablet:  27px;
 	$h3-fs-desktop: 30px;
 	//h4
-	$h4-fs-phone:   21px;
-	$h4-fs-tablet:  24px;
-	$h4-fs-desktop: 27px;
+	$h4-fs-phone:   24px;
+	$h4-fs-tablet:  26px;
+	$h4-fs-desktop: 30px;
+	$h4-fs-widescreen: 34px;
 	//h5
 	$h5-fs-phone:   18px;
 	$h5-fs-tablet:  21px;
 	$h5-fs-desktop: 23px;
 	//h6
 	$h6-fs-phone:   16px;
-	$h6-fs-tablet:  18px;
-	$h6-fs-desktop: 20px;
+	$h6-fs-desktop: 18px;
 
 
 // Default html and body font-size for the base rem value.

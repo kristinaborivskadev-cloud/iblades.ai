@@ -8,8 +8,13 @@
 	width: 100%;
 	z-index: 9999;
 
+	@include media ('>=desktop') {
+		padding: 48px 0;
+	}
+
 	&.fixed-position {
-		background: rgba(14, 58, 116, .8);
+		background: #000;
+		// background: rgba(14, 58, 116, .8);
 		backdrop-filter: blur(10px);
 		// border-color: $light-blue;
 		padding: 10px 0;
@@ -48,8 +53,8 @@
 			
 			.nav-drop {
 
-				@include media ('<tablet') { 
-					background: $white;
+				@include media ('<desktop') { 
+					background: $blue;
 					inset-inline: 0;
 					opacity: 1;
 					transition: opacity .3s 0s, inset 0s 0s;
@@ -72,7 +77,7 @@
 			z-index: 9999;
 			float: right;
 
-			@include media ('>=tablet') {
+			@include media ('>=desktop') {
 				display: none;
 			}
 
@@ -82,7 +87,7 @@
 				@include animate(background width transform);
 
 				content: '';
-				background: $black;
+				background: $white;
 				width: 100%;
 				height: 2px;
 			}
@@ -91,11 +96,11 @@
 		.nav-drop {
 			z-index: 99;
 
-			@include media ('<tablet') { 
+			@include media ('<desktop') { 
 				display: block;
 				position: absolute;
 				inset: var(--_header-height) 100% calc(-100vh + var(--_header-height)) -100%;
-				background: var(--white);
+				// background: var(--white);
 				padding: var(--_header-padding);
 				overflow-x: hidden;
 				overflow-y: auto;
@@ -103,7 +108,7 @@
 				transition: opacity .3s 0s, inset 0s 0s;
 			}
 
-			@include media ('>=tablet') {
+			@include media ('>=desktop') {
 				display: flex;
 			}
 		}
@@ -115,7 +120,7 @@
 		text-align: center;
 
 		/* desktop */
-		@include media ('>=tablet') {
+		@include media ('>=desktop') {
 			display: inline-flex;
 			align-items: center;
 			gap: 0 10px;
@@ -124,27 +129,31 @@
 		}
 
 		@include media ('>=widescreen') {
-			gap: 0 45px;
+			gap: 0 39px;
+			margin-right: -10px;
 		}
 
 		li {
 			margin: 0 0 30px;
 			position: relative;
 
-			@include media ('>=tablet') {
+			@include media ('>=desktop') {
 				margin: 0;
 			}
 		}
 
 		a {
 			display: inline-block;
-			padding: 10px;
-			font-size: 14px;
-			line-height: 1;
+			padding: 10px 7px;
+			font:500 14px/1 $font-sans-serif;
 			text-decoration: none;
-			text-transform: uppercase;
 			position: relative;
 			color: $white;
+
+			@include media ('>=widescreen') {
+				padding: 10px;
+				font-size: 18px;
+			}
 
 			&:hover {
 				text-decoration: underline;
