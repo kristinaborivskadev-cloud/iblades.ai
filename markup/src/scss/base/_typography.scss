@@ -120,6 +120,10 @@ h6 {
 	letter-spacing: 7.2px;
 	font-family: $font-sans-serif;
 
+	@include media ('>=tablet') {
+		font-size: $h6-fs-tablet;
+	}
+
 	@include media ('>=desktop') {
 		font-size: $h6-fs-desktop;
 	}

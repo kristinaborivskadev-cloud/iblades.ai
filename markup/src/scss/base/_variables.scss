@@ -1,11 +1,13 @@
 // Colors
 $black: #000;
+$white: #fff;
+$gray: #999;
+$light-gray: #E5E6E7;
 $black400: #151414;
 $black500: #231F20;
-$light-gray: #E5E6E7;
-$gray: #999;
 $blue: #0084FB;
-$white: #fff;
+$dark-green: #000E00;
+$red: #DA2626;
 
 // Fonts
 $font-sans-serif: 'Poppins', 'Arial', 'Helvetica', sans-serif;
@@ -39,7 +41,7 @@ $headings-color:	   inherit;
 	$h1-fs-widescreen: 60px;
 	$h1-fs-ls-widescreen: 80px;
 	//h2
-	$h2-fs-xs-phone:   40px;
+	$h2-fs-xs-phone:   38px;
 	$h2-fs-phone:   40px;
 	$h2-fs-widescreen: 58px;
 	$h2-fs-ls-widescreen: 80px;
@@ -57,7 +59,8 @@ $headings-color:	   inherit;
 	$h5-fs-tablet:  21px;
 	$h5-fs-desktop: 23px;
 	//h6
-	$h6-fs-phone:   16px;
+	$h6-fs-phone:   14px;
+	$h6-fs-tablet:   16px;
 	$h6-fs-desktop: 18px;
 
 

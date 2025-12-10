@@ -1,11 +1,12 @@
 jQuery(function() {
 	initMobileNav();
+	initStickyScrollBlock();
 });
 
 function initMobileNav() {
 
 	ResponsiveHelper.addRange({
-		'..768': {
+		'..1024': {
 			on: function() {
 				$('#nav-bar').mobileNav();
 
@@ -28,9 +29,33 @@ function initMobileNav() {
 				$('html').css('overflow', 'unset');
 
 				$('.nav-opener').off('click');
-				$('.menu-list a, .btn-block a').off('click');
 			}
 		}
+	});
+}
+
+function initStickyScrollBlock() {
+	var isScrolled = false;
+
+	function checkScroll() {
+		if (!isScrolled && $(window).scrollTop() > 0) {
+
+			$('#header').addClass('fixed-position');
+
+			isScrolled = true;
+
+		} else if (isScrolled && $(window).scrollTop() === 0) {
+
+			$('#header').removeClass('fixed-position');
+
+			isScrolled = false;
+		}
+	}
+
+	checkScroll();
+
+	$(window).scroll(function() {
+		checkScroll();
 	});
 }
 

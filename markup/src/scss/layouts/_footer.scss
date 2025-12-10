@@ -1,0 +1,263 @@
+#footer {
+	background: $blue;
+	background-size: 200% auto;
+	background-position: top center;
+	background-repeat: no-repeat;
+	padding: 30px 0;
+	position: relative;
+	font-size: 16px;
+	font-weight: 600;
+	color: $light-gray;
+
+	@include media ('>=tablet') {
+		padding: 50px 0;
+	}
+
+	@include media ('>=desktop') {
+		background-size: cover;
+		padding: 80px 0;
+		display: flex;
+		flex-direction: column;
+		min-height: 1400px;
+	}
+
+	@include media ('>=ls-widescreen') {
+		padding: 115px 0 75px;
+		font-size: 18px;
+		min-height: 1684px;
+	}
+
+	&:before {
+		
+		@include media ('<desktop') {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background: rgba(#000, .4);
+		}
+	}
+
+	.container {
+		position: relative;
+		z-index: 9;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		flex-grow: 1;
+	}
+
+	h2 {
+		margin: 0 0 .32em;
+	}
+
+	h4 {
+		line-height: 1.1;
+		margin: 0 0 .6em;
+	}
+
+	h6 {
+		margin: 0 0 1.2em;
+	}
+
+	p {
+		margin: 0 0 .2em;
+	}
+
+	.logo {
+
+		@include media ('>=widescreen') {
+			width: 263px;
+		}
+	}
+
+	.title-block {
+		text-align: center;
+		margin: 0 0 40px;
+
+		@include media ('>=desktop') {
+			margin: 0 0 105px;
+		}
+	}
+
+	.logos-list {
+		@extend %listreset;
+
+		text-align: center;
+		margin: 0 0 30px;
+
+		@include media ('>=tabletSm') {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 30px;
+			max-width: 600px;
+			margin: 0 auto 50px;
+		}
+
+		@include media ('>=desktop') {
+			gap: 75px 48px;
+			max-width: 1450px;
+			margin: 0 auto 50px;
+		}
+
+		li {
+			display: flex;
+			align-items: center;
+			max-width: 180px;
+			margin: 0 auto 30px;
+
+			@include media ('>=tabletSm') {
+				margin: 0;
+			}
+
+			@include media ('>=widescreen') {
+				max-width: 220px;
+			}
+
+			@include media ('>=ls-widescreen') {
+				max-width: none;
+			}
+
+			img {
+
+				@include media ('<widescreen') {
+					max-height: 90px;
+					margin: 0 auto;
+				}
+			}
+		}
+	}
+
+	.columns-block {
+		padding: 30px 0 50px;
+		border-top: 1px solid $white;
+		color: $white;
+
+		@include media ('>=tablet') {
+			padding: 40px 0 0;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			gap: 0 10px;
+		}
+	}
+
+	.logo-column {
+		margin: 0 0 30px;
+
+		@include media ('>=tablet') {
+			width: 100%;
+		}
+
+		@include media ('>=desktop') {
+			width: calc(35% - 10px);
+			margin: 0;
+		}
+
+		@include media ('>=ls-widescreen') {
+			width: calc(50% - 5px);
+		}
+	}
+
+	.menu-column {
+		margin: 0 0 30px;
+
+		@include media ('>=tablet') {
+			width: calc(50% - 5px);
+		}
+
+		@include media ('>=desktop') {
+			width: calc(35% - 10px);
+			margin: 0;
+		}
+
+		@include media ('>=ls-widescreen') {
+			width: calc(25% - 10px);
+		}
+
+		.menu {
+			@extend %listreset;
+
+			@include media ('>=desktop') {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0 20px;
+			}
+
+			@include media ('>=ls-widescreen') {
+				margin-top: 15px;
+			}
+
+			li {
+				margin: 0 0 15px;
+
+				@include media ('>=desktop') {
+					width: calc(50% - 10px);
+					margin: 0 0 12px;
+				}
+			}
+
+			a {
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	.contacts-column {
+		font-weight: 700;
+
+		@include media ('>=tablet') {
+			width: calc(50% - 5px);
+		}
+
+		@include media ('>=desktop') {
+			width: calc(30% - 10px);
+		}
+
+		@include media ('>=ls-widescreen') {
+			width: calc(25% - 10px);
+			padding-top: 10px;
+			padding-left: 190px;
+		}
+
+		.subtitle {
+			display: block;
+			font-family: $secondary-sans-serif;
+			text-transform: uppercase;
+			font-size: 18px;
+			margin: 20px 0 12px;
+
+			@include media ('>=ls-widescreen') {
+				font-size: 24px;
+				margin: 43px 0 12px;
+			}
+		}
+
+		a {
+			font-size: 18px;
+			font-family: $secondary-sans-serif;
+			display: block;
+			text-decoration: none;
+
+			@include media ('>=ls-widescreen') {
+				font-size: 24px;
+			}
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.copyright-block {
+		color: $light-gray;
+
+		@include media ('>=ls-widescreen') {
+			margin-top: -60px;
+		}
+	}
+}
