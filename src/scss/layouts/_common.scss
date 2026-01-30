@@ -712,21 +712,22 @@ br {
 
 		@include media ('>=ls-widescreen') {
 			justify-content: center;
-			gap: 0 90px;
 		}
 	}
-
+	// 21.53
+	// 19.94
+	// 17.6
 	.left-column {
 		max-width: 400px;
 		margin: 0 auto 20px;
 
 		@include media ('>=desktop') {
-			width: calc(24% - 10px);
+			width: calc(33% - 10px);
 			margin: 0;
 		}
 
 		@include media ('>=ls-widescreen') {
-			width: calc(23.3% - 10px);
+			width: calc(20.97% - 10px);
 		}
 
 		.suite-list {
@@ -761,47 +762,57 @@ br {
 		}
 	}
 
-	.arrow-holder {
-		width: 60px;
-		text-align: center;
-		margin: 0 auto 20px;
-
+	.cental-column {
+		
 		@include media ('>=desktop') {
-			margin: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 		}
 
 		@include media ('>=ls-widescreen') {
-			width: 121px;
+			width: calc(59.65% - 20px);
 		}
 
-		img {
+		.arrow-holder {
+			width: 60px;
+			text-align: center;
+			margin: 0 auto 20px;
 
-			@include media ('<desktop') {
-				transform: rotate(90deg);
+			@include media ('>=desktop') {
+				margin: 0;
+			}
+
+			@include media ('>=ls-widescreen') {
+				width: 120px;
+			}
+
+			img {
+
+				@include media ('<desktop') {
+					transform: rotate(90deg);
+				}
+			}
+		}
+
+		.logos-column {
+			width: 100%;
+			max-width: 500px;
+			margin: 0 auto 20px;
+
+			@include media ('>=desktop') {
+				max-width: 782px;
+				margin: 0;
 			}
 		}
 	}
 
-	.logos-column {
-		max-width: 360px;
-		margin: 0 auto 20px;
-
-		@include media ('>=desktop') {
-			width: calc(38% - 10px);
-			margin: 0;
-		}
-
-		@include media ('>=ls-widescreen') {
-			width: calc(21% - 10px);
-		}
-	}
-
 	.right-column {
-		max-width: 200px;
+		max-width: 150px;
 		margin: 0 auto;
 
 		@include media ('>=desktop') {
-			width: calc(38% - 10px);
+			width: calc(33% - 10px);
 			margin: 0;
 		}
 
@@ -810,7 +821,7 @@ br {
 		}
 
 		@include media ('>=ls-widescreen') {
-			width: calc(23.3% - 10px);
+			width: calc(19.38% - 10px);
 			max-width: none;
 			text-align: right;
 		}
